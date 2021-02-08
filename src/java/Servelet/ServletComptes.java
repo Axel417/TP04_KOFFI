@@ -64,7 +64,6 @@ public class ServletComptes extends HttpServlet {
                     Collection<CompteBancaire> liste = gestionnaireCompteBancaire1.getAllCompte();
                     request.setAttribute("listeDesComptesBanquaire", liste);
                     forwardTo = "listAccount.jsp?action=ListerCompte";
-                    message = "Liste des comptes bancaires";
                     break;
                 case "creerNouveauCompte":
                     String prenom = request.getParameter("prenom");
