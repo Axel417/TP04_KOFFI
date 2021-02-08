@@ -27,7 +27,7 @@
                     <a class="nav-link" href="newAccount.jsp">Ajouter un compte Bancaire</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="ServletComptes?action=ListerCompte">Liste des comptes Bancaires</a>
+                    <a class="nav-link" href="ServletComptes?action=ListerCompteBanquaire">Liste des comptes Bancaires</a>
                 </li>
             </ul>
         </nav>
@@ -35,13 +35,19 @@
         <div class="container-fluid">
 
             <div class="row justify-content-md-center" style="margin-top: 20px">
-                
+
                 <div class="container">
-                    
-                    <div class="alert alert-primary" role="alert">
-                        <center>Création d'un compte banquaire</center>  
+
+                    <c:if test="${!empty param['message']}">
+                        <div class="alert alert-success" role="alert">
+                            <h6>Reçu message : ${param.message}</h6>
+                        </div>
+                    </c:if>
+
+                    <div class="alert alert-dark" role="alert">
+                        <center>Création d'un compte banquaire</center>
                     </div>
-                    
+
                     <form action="ServletComptes" method="post">
                         <div class="form-group">
                             <label for="nom">Nom</label>

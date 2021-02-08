@@ -30,7 +30,7 @@
                     <a class="nav-link" href="newAccount.jsp">Ajouter un compte Bancaire</a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="ServletComptes?action=ListerCompte">Liste des comptes Bancaires</a>
+                    <a class="nav-link" href="ServletComptes?action=ListerCompteBanquaire">Liste des comptes Bancaires</a>
                 </li>
             </ul>
         </nav>
@@ -42,7 +42,7 @@
 
 
                 <div class="container">
-                    <div class="alert alert-primary" role="alert">
+                    <div class="alert alert-dark" role="alert">
                         <center>Liste des comptes Banquaire</center>  
                     </div>
 
@@ -57,7 +57,7 @@
                         </thead>
                         <tbody>
                             <c:set var="total" value="0"/>
-                            <c:forEach var="cb" items="${requestScope['listeDesComptesB']}">
+                            <c:forEach var="cb" items="${requestScope['listeDesComptesBanquaire']}">
                                 <tr>
                                     <td>${cb.accountNumber}</td>
                                     <td>${cb.firstname}</td>
@@ -69,7 +69,7 @@
                             <tr><td><b>TOTAL</b></td><td></td><td></td><td><b>${total}</b></td></tr>
                         </tbody>
                     </table>
-
+                        <a class="btn btn-primary" href="newAccount.jsp">Nouveau Compte</a>
 
                 </div>
             </div>

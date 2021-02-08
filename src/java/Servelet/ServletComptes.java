@@ -60,9 +60,9 @@ public class ServletComptes extends HttpServlet {
         if (action != null) {
             switch (action) {
                 
-                case "ListerCompte":
+                case "ListerCompteBanquaire":
                     Collection<CompteBancaire> liste = gestionnaireCompteBancaire1.getAllCompte();
-                    request.setAttribute("listeDesComptesB", liste);
+                    request.setAttribute("listeDesComptesBanquaire", liste);
                     forwardTo = "listAccount.jsp?action=ListerCompte";
                     message = "Liste des comptes bancaires";
                     break;
@@ -72,10 +72,6 @@ public class ServletComptes extends HttpServlet {
                     String numCompte = request.getParameter("numCompte");
                     double balance = Double.parseDouble(request.getParameter("balance"));
                     gestionnaireCompteBancaire1.creeUtilisateur(nom, prenom, numCompte, balance);
-                    /*Collection<CompteBancaire> liste = gestionnaireCompteBancaire.getAllBankAccount();
-                    request.setAttribute("listeDesComptesBanquaires", liste);
-                    
-                    message = "Compte crée avec succès";*/
                     message = "Compte crée avec succès";
                     forwardTo = "newAccount.jsp?action=todo";
                     break;
