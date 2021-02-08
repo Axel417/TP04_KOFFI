@@ -71,7 +71,7 @@ public class ServletComptes extends HttpServlet {
                     String nom = request.getParameter("nom");
                     String numCompte = request.getParameter("numCompte");
                     double balance = Double.parseDouble(request.getParameter("balance"));
-                    gestionnaireCompteBancaire1.creeUtilisateur(nom, prenom, numCompte, balance);
+                    gestionnaireCompteBancaire1.creeCompte(nom, prenom, numCompte, balance);
                     message = "Compte crée avec succès";
                     forwardTo = "newAccount.jsp?action=todo";
                     break;

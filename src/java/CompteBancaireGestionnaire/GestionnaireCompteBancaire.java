@@ -28,14 +28,9 @@ public class GestionnaireCompteBancaire {
         creeCompte("koffi","Axel","CB01",50000);
          creeCompte("Soro","Axel","CB02",50000);
       }
-       
-    public CompteBancaire creeCompte(String nom, String prenom, String numero, double balance) {
-        CompteBancaire u = new CompteBancaire(nom, prenom, numero, balance);
-        em.persist(u);
-        return u;
-    }
+  
     
-    public CompteBancaire creeUtilisateur(String firstName, String lastName, String accountNumber,double balance) {
+    public CompteBancaire creeCompte(String firstName, String lastName, String accountNumber,double balance) {
         CompteBancaire u = new CompteBancaire(firstName, lastName, accountNumber, balance);
         em.persist(u);
         return u;
